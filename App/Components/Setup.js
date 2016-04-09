@@ -3,6 +3,7 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TextInput,
   View,
   TouchableHighlight,
   Navigator
@@ -13,26 +14,56 @@ class Setup extends Component {
     console.log('helloo');
   }
 
+  inputGenerator() {
+    let inputs = [{
+        label: "First Name",
+        value: ""
+    }, {
+        label: "Last Name",
+        value: ""
+    }, {
+        label: "Email",
+        value: ""
+    }, {
+        label: "Password",
+        value: "",
+        secure: true
+    }];
+
+    return inputs.map(function(input) {
+      console.log('input', input);
+      return <TextInput
+        style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10}}
+        key={input.label}
+        placeholder={input.label}
+        secureTextEntry={input.secure}
+         />;
+    });
+  }
 
   render() {
     return (
         <Navigator
           renderScene={this.renderScene.bind(this)}
-          />
-
-      );
-          
+        />
+    );
   }
+
   renderScene(route, navigator){
     return (
       <View style={styles.container}>
-            <Text style={styles.welcome}>
-              Setup Test
-            </Text>
-            
-
-          </View>    
-        );
+        {this.inputGenerator()}
+        <Text>
+          Dr. Dick is HIPAA compliant and secures your data with encryption.
+        </Text>
+        <TouchableHighlight
+          onPress={this.props.nextRoute.bind(this, {id: 'Questionnaire', title: 'Recent HIV & STD Tests'})}>
+          <View>
+            <Text >Next</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
+    );
   }
 }
 
@@ -55,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Setup 
+export default Setup

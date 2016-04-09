@@ -9,14 +9,6 @@ import React, {
 } from 'react-native';
 
 class Main extends Component {
-  nextRoute() {
-    this.props.navigator.push({
-      id: 'Setup',
-      title: 'Setup'
-    });
-  }
-
-
   render() {
     return (
         <Navigator
@@ -24,7 +16,7 @@ class Main extends Component {
           />
 
       );
-          
+
   }
   renderScene(route, navigator){
     return (
@@ -36,13 +28,13 @@ class Main extends Component {
               Our Dick Helps Keep Your's Healthy
             </Text>
             <TouchableHighlight
-              onPress={this.nextRoute.bind(this)}>
+              onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
               <View>
                 <Text >Get Started</Text>
               </View>
             </TouchableHighlight>
 
-          </View>    
+          </View>
         );
   }
 }
@@ -66,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main 
+export default Main
