@@ -86,6 +86,7 @@ class Questionnaire extends Component {
           <Question header={this.state.header} 
                     question={this.state.question} 
                     nextQuestion={this.switchQuestion.bind(this)}
+                    navigator={this.props.navigator}
                     />
         );
     }

@@ -116,7 +116,7 @@ class Menu extends Component {
   renderScene(){
     return (
       <View style={styles.container}>
-        <Header value={this.generateText().header} />
+        <Header navigator={this.props.navigator} value={this.generateText().header} />
         {this.generateText().message}
         {this.generateMenuItems()}
       </View>

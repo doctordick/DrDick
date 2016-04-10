@@ -6,10 +6,15 @@ import React, {
 } from 'react-native';
 
 class Header extends Component {
+  goBack() {
+    if(this.props.navigator){
+      this.props.navigator.pop();
+    }
+  }
   render() {
     return (
       <View>
-        <TouchableHighlight>
+        <TouchableHighlight onPress={this.goBack.bind(this)}>
           <View>
             <Text>
               &lsaquo;

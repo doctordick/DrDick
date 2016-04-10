@@ -13,10 +13,6 @@ import Next from "./Next"
 import Header from "./Header"
 
 class Setup extends Component {
-  nextRoute() {
-    console.log('helloo');
-  }
-
   inputGenerator() {
     let inputs = [{
         label: "First Name",
@@ -54,7 +50,7 @@ class Setup extends Component {
   renderScene(){
     return (
       <View style={styles.container}>
-        <Header value="Setup" />
+        <Header value="Setup" navigator={this.props.navigator}/>
         {this.inputGenerator()}
         <Text>
           Dr. Dick is HIPAA compliant and secures your data with encryption.

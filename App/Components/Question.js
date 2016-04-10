@@ -40,7 +40,7 @@ class Question extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header value={this.props.header} />
+        <Header navigator={this.props.navigator} value={this.props.header} />
         <Text>
           {this.props.question}
         </Text>
