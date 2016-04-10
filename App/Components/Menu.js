@@ -87,7 +87,7 @@ class Menu extends Component {
       text.message = (
         <View>
           <Text style={styles.text}>
-            Welcome Henry, Dr. Dick is happy to see you! What would you like to do?
+            Welcome John, Dr. Dick is happy to see you! What would you like to do?
           </Text>
         </View>
       )  
