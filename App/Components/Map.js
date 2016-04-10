@@ -51,18 +51,20 @@ class Map extends Component {
   }
   renderScene(route, navigator){
     return (
-      <View style={{flex: 1}}>
+      <View>
         <Header value="Map" navigator={this.props.navigator}/>
-        <MapView 
-          showsUserLocation={true}
-          showsPointsOfInterest={false}
-          annotations={markers} 
-          style={{flex: 1, flexDirection: 'row'}} 
-          region={{
-            latitude: 37.782286,
-            longitude: -122.3973877, 
-            latitudeDelta: .01,
-            longitudeDelta: .01 }}/>
+        <View style={styles.container}>
+          <MapView 
+            showsUserLocation={true}
+            showsPointsOfInterest={false}
+            annotations={markers} 
+            style={{flex: 1, flexDirection: 'row'}} 
+            region={{
+              latitude: 37.782286,
+              longitude: -122.3973877, 
+              latitudeDelta: .01,
+              longitudeDelta: .01 }}/>
+        </View>
       </View>
     );
   }

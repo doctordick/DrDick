@@ -54,9 +54,11 @@ class Recommendations extends Component {
 
   renderScene(){
     return (
-      <View style={styles.container}>
-      <Header value="Recommendations" navigator={this.props.navigator}/>
-        {this.recGenerator()}     
+      <View>
+          <Header value="Recommendations" navigator={this.props.navigator}/>
+          <View style={styles.container}>
+            {this.recGenerator()}     
+          </View>
       </View>
     );
   }

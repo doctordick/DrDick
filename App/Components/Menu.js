@@ -23,8 +23,6 @@ class Menu extends Component {
         inputs = [],
         context = this;
 
-    console.log('previousState', previousState);
-
     if(previousState === 'Setup') {
       inputs = [{
           label: "Update Info"
@@ -115,10 +113,12 @@ class Menu extends Component {
 
   renderScene(){
     return (
-      <View style={styles.container}>
+      <View>
         <Header navigator={this.props.navigator} value={this.generateText().header} />
-        {this.generateText().message}
-        {this.generateMenuItems()}
+        <View style={styles.container}>
+          {this.generateText().message}
+          {this.generateMenuItems()}
+        </View>
       </View>
     );
   }

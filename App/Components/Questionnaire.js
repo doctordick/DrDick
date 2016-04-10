@@ -13,7 +13,7 @@ import Header from './Header';
 import Question from './Question';
 
 const questionCollection = [{
-    header: 'Your Recent HIV & STD Tests',
+    header: 'Recent HIV & STD Tests',
     questions: [
         "Last HIV test? ",
         "Last syphilis test?",
@@ -24,7 +24,7 @@ const questionCollection = [{
         "Last hepatitis C test?"
     ]
 }, {
-    header: "Your Recent Sexual History",
+    header: "Recent Sexual History",
     questions: [
         "Last time bottoming?",
         "Last time topping?",

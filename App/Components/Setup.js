@@ -5,6 +5,7 @@ import React, {
   Text,
   TextInput,
   View,
+  ScrollView,
   TouchableHighlight,
   Navigator
 } from 'react-native';
@@ -49,16 +50,18 @@ class Setup extends Component {
 
   renderScene(){
     return (
-      <View style={styles.container}>
+      <View>
         <Header value="Setup" navigator={this.props.navigator}/>
         {this.inputGenerator()}
-        <Text>
-          Dr. Dick is HIPAA compliant and secures your data with encryption.
-        </Text>
-        <Next nextRoute={this.props.nextRoute} 
-              nextRouteInfo={{id: 'Menu', title: 'New Session'}}
-              navigator={this.props.navigator}
-        />
+        <View style={styles.container}>
+          <Text>
+            Dr. Dick is HIPAA compliant and secures your data with encryption.
+          </Text>
+          <Next nextRoute={this.props.nextRoute} 
+                nextRouteInfo={{id: 'Menu', title: 'New Session'}}
+                navigator={this.props.navigator}
+          />
+        </View>
       </View>
     );
   }

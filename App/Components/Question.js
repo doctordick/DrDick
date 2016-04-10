@@ -39,12 +39,14 @@ class Question extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <Header navigator={this.props.navigator} value={this.props.header} />
-        <Text>
-          {this.props.question}
-        </Text>
-        {this.generateOptions()}
+        <View style={styles.container}>
+          <Text>
+            {this.props.question}
+          </Text>
+          {this.generateOptions()}
+        </View>
       </View>
     );
   }
