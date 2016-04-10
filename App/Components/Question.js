@@ -26,9 +26,14 @@ class Question extends Component {
 
     return options.map((option, index)=>{
       return (
-        <TouchableHighlight onPress={context.nextQuestion.bind(context)} key={index}>
+        <TouchableHighlight 
+          underlayColor={"#ffffff"} 
+          onPress={context.nextQuestion.bind(context)} 
+          key={index}
+          activeOpacity= {4}
+          >
           <View>
-            <Text>
+            <Text style={styles.option}>
               {option}
             </Text>
           </View>
@@ -42,7 +47,7 @@ class Question extends Component {
       <View style={{backgroundColor:'#0C94B9', flex: 1}}>
         <Header navigator={this.props.navigator} value={this.props.header} />
         <View style={styles.container} >
-          <Text>
+          <Text style={styles.text}>
             {this.props.question}
           </Text>
           {this.generateOptions()}
@@ -58,8 +63,25 @@ const styles = StyleSheet.create({
     flex: 11,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#0C94B9',
 
+  },
+  option: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    textAlign: 'center',
+    backgroundColor: '#35A5C2',
+    margin: 5,
+    width: 300,
+    color: '#fff',
+    fontSize: 16
+  },
+  text: {
+    width: 300,
+    fontSize: 22,
+    textAlign: 'center',
+    marginBottom: 15,
+    color: '#fff'
   }
 });
 
