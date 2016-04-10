@@ -13,9 +13,10 @@ class Next extends Component {
     return (
       <View>
           <TouchableHighlight
+            underlayColor={"#0C94B9"}
             onPress={this.props.nextRoute.bind(this, this.props.nextRouteInfo)}>
-            <View>
-              <Text>Next</Text>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Next</Text>
             </View>
           </TouchableHighlight>
       </View>
@@ -30,15 +31,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  button: {
+    marginTop: 30,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 45,
+    paddingRight: 45,
+    alignItems: 'center',
+    backgroundColor: '#00bbbb',
+    borderRadius: 50,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  buttonText: {
+    color: '#fff',
+    fontSize: 25
   },
 });
 

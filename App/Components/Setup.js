@@ -31,12 +31,15 @@ class Setup extends Component {
     }];
 
     return inputs.map(function(input) {
-      return <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10}}
-        key={input.label}
-        placeholder={input.label}
-        secureTextEntry={input.secure}
-         />;
+      return (
+        <View key={input.label} style={styles.input}>
+          <TextInput style={styles.textInput}
+            placeholder={input.label}
+            placeholderTextColor={"#ffffff"}
+            secureTextEntry={input.secure}
+             />
+         </View>
+        )
     });
   }
 
@@ -50,11 +53,11 @@ class Setup extends Component {
 
   renderScene(){
     return (
-      <View style={{backgroundColor:'#0C94B9'}}>
+      <View style={{backgroundColor:'#0C94B9', flex: 1}}>
         <Header value="Setup" navigator={this.props.navigator}/>
         <View style={styles.container}>
           {this.inputGenerator()}
-          <Text>
+          <Text style={styles.infoText}>
             Dr. Dick is HIPAA compliant and secures your data with encryption.
           </Text>
           <Next nextRoute={this.props.nextRoute} 
@@ -69,7 +72,7 @@ class Setup extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 11,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -78,6 +81,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  input: { 
+    borderColor: '#19c3f5', 
+    borderBottomWidth: 2, 
+    marginBottom: 20
+  },
+  infoText: {
+    marginLeft: 20, 
+    marginRight: 20,
+    textAlign: 'center',
+    color: '#ffffff'
+  },
+  textInput:{
+    height: 35, 
+    color: 'white',
+    width: 300
   },
   instructions: {
     textAlign: 'center',
