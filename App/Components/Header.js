@@ -15,7 +15,7 @@ class Header extends Component {
   render() {
     return (
       <View style={style.container}>
-        <TouchableHighlight underlayColor={"#ffffff"} onPress={this.goBack.bind(this)}>
+        <TouchableHighlight underlayColor={"'rgba(255, 255, 255, 0.05)'"} onPress={this.goBack.bind(this)}>
           <View style={style.backButton}>
             <Text style={style.text}>
               &lsaquo;

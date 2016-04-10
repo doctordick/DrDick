@@ -52,6 +52,7 @@ class Menu extends Component {
       if(input.nextRouteId){
         return (
           <TouchableHighlight 
+            underlayColor={"#ffffff"} 
             key={index} 
             onPress= {
              context.props.nextRoute.bind(context, { id: input.nextRouteId , title:'' }) 
