@@ -17,8 +17,8 @@ class Card extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          {this.props.std}
+        <Text style={styles.title}>
+          {this.props.std.toUpperCase()}
         </Text>
         <Text>
           {this.props.procedures}
@@ -38,22 +38,17 @@ class Card extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
-    margin: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    margin: 5,
+    backgroundColor: '#35A5C2',
+    width: 350
   },
-  welcome: {
-    fontSize: 20,
+  title: {
+    color: '#fff',
     textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    fontWeight: 'bold',
+    fontSize: 24
+
+  }
 });
 
 export default Card
