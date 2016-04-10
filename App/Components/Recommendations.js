@@ -30,9 +30,10 @@ class Recommendations extends Component {
         testCenters: '<a>Find a Testing Center</a>'
       }];
 
-    return recommendations.map(function(rec) {
+    return recommendations.map(function(rec, index) {
       return <Card
         std={rec.std}
+        key={index}
         procedures={rec.procedures}
         testCenters={rec.testCenters}
          />;
