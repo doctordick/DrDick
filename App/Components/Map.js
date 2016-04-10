@@ -10,6 +10,9 @@ import React, {
   
 } from 'react-native';
 
+import Header from "./Header"
+
+
 var markers = [
   {
     latitude: 37.782286,
@@ -49,7 +52,7 @@ class Map extends Component {
   renderScene(route, navigator){
     return (
       <View style={{flex: 1}}>
-         <Text>Map</Text>
+        <Header value="Map" navigator={this.props.navigator}/>
         <MapView 
           showsUserLocation={true}
           showsPointsOfInterest={false}

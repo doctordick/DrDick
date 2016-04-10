@@ -18,6 +18,8 @@ import Questionnaire from "./App/Components/Questionnaire"
 import Menu from "./App/Components/Menu"
 import Loading from "./App/Components/Loading"
 import Recommendations from "./App/Components/Recommendations"
+import Map from "./App/Components/Map"
+
 
 class DrDick extends Component {
   nextRoute(route) {
@@ -89,6 +91,15 @@ class DrDick extends Component {
     if(routeId === 'Recommendations'){
         return(
           <Recommendations
+            title={route.title}
+            navigator={navigator}
+            nextRoute={this.nextRoute}/>
+        )
+    }
+
+    if(routeId === 'Map'){
+        return(
+          <Map
             title={route.title}
             navigator={navigator}
             nextRoute={this.nextRoute}/>

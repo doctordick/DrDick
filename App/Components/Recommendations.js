@@ -14,8 +14,12 @@ import Header from "./Header"
 import Card from "./Card"
 
 class Recommendations extends Component {
-  recGenerator() {
+  viewMap(){
+    this.props.nextRoute({id:'Map', title: 'Map View'});
+  }
 
+  recGenerator() {
+    let context = this;
     const recommendations = [{
         std: 'HIV/STD',
         procedures: ['Blood Test', 'Oral Swab Test', 'Urine Test'],
@@ -29,9 +33,9 @@ class Recommendations extends Component {
         procedures: ['Blood Test'],
         testCenters: '<a>Find a Testing Center</a>'
       }];
-
     return recommendations.map(function(rec, index) {
       return <Card
+        viewMap={context.viewMap.bind(context)}
         std={rec.std}
         key={index}
         procedures={rec.procedures}
@@ -51,6 +55,7 @@ class Recommendations extends Component {
   renderScene(){
     return (
       <View style={styles.container}>
+      <Header value="Recommendations" navigator={this.props.navigator}/>
         {this.recGenerator()}
         <Text>
           Dr. Dick is HIPAA compliant and secures your data with encryption.

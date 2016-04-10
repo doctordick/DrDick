@@ -10,7 +10,7 @@ import React, {
 } from 'react-native';
 
 import Recommendations from "./Recommendations"
-
+import Map from "./Map"
 
 class Card extends Component {
 
@@ -23,9 +23,13 @@ class Card extends Component {
         <Text>
           {this.props.procedures}
         </Text>
-         <Text>
-          {this.props.testCenters}
-        </Text>
+       <TouchableHighlight onPress={this.props.viewMap}>
+          <View>
+            <Text>
+              {this.props.testCenters}
+            </Text>
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
