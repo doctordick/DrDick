@@ -21,17 +21,17 @@ class Main extends Component {
   renderScene(){
     return (
       <View style={styles.container}>
-            <Text style={styles.welcome}>
-              Dr. Dick
+            <Text style={styles.title}>
+              Doctor Dick
             </Text>
-            <Text style={styles.instructions}>
-              Our Dick Helps Keep Your's Healthy
+            <Text style={styles.subtitle}>
+              Our Dick Helps Keep Yours Healthy
             </Text>
             <TouchableHighlight
               style={buttonStyles.group}
               onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
-              <View>
-                <Text style={buttonStyles.text}>Get Started</Text>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Get Started</Text>
               </View>
             </TouchableHighlight>
 
@@ -68,17 +68,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
-  welcome: {
-    fontSize: 20,
+  title: {
+    fontSize: 50,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
+  subtitle: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 50,
+    fontSize: 23
+  },
+  button: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
+    alignItems: 'center',
+    backgroundColor: '#00bbbb',
+    borderRadius: 50,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 25
   },
 });
 
