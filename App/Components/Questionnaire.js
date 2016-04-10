@@ -48,22 +48,29 @@ class Questionnaire extends Component {
         // increment number until the end of first array
         // then switch to the second array
         this.state.questionIndex++;
+
         let questionIndex = this.state.questionIndex; 
         let collectionIndex = this.state.collectionIndex;
 
         if(collectionIndex === 0 && questionIndex >= 7) {
-            collectionIndex = this.state.collectionIndex++;
+            collectionIndex = 1;
             questionIndex = 0;
         } 
 
+        // const nextRoute = this.props.nextRoute;
+
         if(collectionIndex === 1 && questionIndex >= 5){
             // This route change isn't working
-            // this.props.nextRoute({
-            //    id: "Loading" 
-            // }).bind(this);
+            this.props.nextRoute({
+                id: "Loading"
+            });
         }
-
-        this.setState({ question: questionCollection[collectionIndex].questions[questionIndex] });
+        this.setState({ 
+                        question: questionCollection[collectionIndex].questions[questionIndex],
+                        header: questionCollection[collectionIndex].header,
+                        questionIndex: questionIndex,
+                        collectionIndex: collectionIndex
+                      });
     }
 
     render() {

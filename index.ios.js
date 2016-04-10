@@ -21,7 +21,12 @@ import Recommendations from "./App/Components/Recommendations"
 
 class DrDick extends Component {
   nextRoute(route) {
-    this.props.navigator.push(route);
+    if(this.props){
+        this.props.navigator.push(route);
+    } else {
+        console.log(this);
+        this.navigator.push(route);
+    }
   }
 
   render() {

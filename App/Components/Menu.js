@@ -23,6 +23,8 @@ class Menu extends Component {
         inputs = [],
         context = this;
 
+    console.log('previousState', previousState);
+
     if(previousState === 'Setup') {
       inputs = [{
           label: "Update Info"
@@ -35,9 +37,11 @@ class Menu extends Component {
       }, {
           label: "Get Tested"
       }];
-    } else if(previousState === 'Loading') {
+    } else if(previousState === 'Questionnaire') {
       inputs = [{
-          label: "Recommended Tests"
+          label: "Recommended Tests",
+          nextRouteId: 'Recommendations',
+          title: ''  
       }, {
           label: "Recommended Vaccinations"
       }, {
@@ -88,7 +92,7 @@ class Menu extends Component {
           </Text>
         </View>
       )  
-    } else if(previousState === 'Loading') {
+    } else if(previousState === 'Questionnaire') {
       text.header = 'Recommendations';
       text.message = (
         <View>

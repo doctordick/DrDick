@@ -26,11 +26,12 @@ class Loading extends Component {
   componentWillMount() {
     let previousState = this.findPreviousState(),
         nextRouteId;
+    console.log('previousState', previousState);
 
     if(previousState === 'Menu'){
       nextRouteId = 'Questionnaire';
     } else if(previousState === 'Questionnaire') {
-      nextRouteId = 'Recommendations';
+      nextRouteId = 'Menu';
     }
 
     const navigator = this.props.navigator;
@@ -39,7 +40,7 @@ class Loading extends Component {
       navigator.replace({
         id: nextRouteId,
       });
-    }, 1500);
+    }, 500);
   }
 
   render() {
