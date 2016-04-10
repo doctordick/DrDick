@@ -9,6 +9,8 @@ import React, {
   Navigator
 } from 'react-native';
 
+import Next from "./Next"
+
 class Setup extends Component {
   nextRoute() {
     console.log('helloo');
@@ -31,7 +33,6 @@ class Setup extends Component {
     }];
 
     return inputs.map(function(input) {
-      console.log('input', input);
       return <TextInput
         style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10}}
         key={input.label}
@@ -43,9 +44,9 @@ class Setup extends Component {
 
   render() {
     return (
-        <Navigator
-          renderScene={this.renderScene.bind(this)}
-        />
+      <Navigator
+        renderScene={this.renderScene.bind(this)}
+      />
     );
   }
 
@@ -56,12 +57,10 @@ class Setup extends Component {
         <Text>
           Dr. Dick is HIPAA compliant and secures your data with encryption.
         </Text>
-        <TouchableHighlight
-          onPress={this.props.nextRoute.bind(this, {id: 'Questionnaire', title: 'Recent HIV & STD Tests'})}>
-          <View>
-            <Text >Next</Text>
-          </View>
-        </TouchableHighlight>
+        <Next nextRoute={this.props.nextRoute} 
+              nextRouteInfo={{id: 'Questionnaire', title: 'Recent HIV & STD Tests'}}
+              navigator={this.props.navigator}
+        />
       </View>
     );
   }
