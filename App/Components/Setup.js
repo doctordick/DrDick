@@ -74,7 +74,7 @@ class Setup extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 11,
+    flex: 12,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
