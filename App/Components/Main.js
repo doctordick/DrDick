@@ -27,8 +27,7 @@ class Main extends Component {
             <Text style={styles.subtitle}>
               Our Dick Helps Keep Yours Healthy
             </Text>
-            <TouchableHighlight
-              style={buttonStyles.group}
+            <TouchableHighlight underlayColor={"#ffffff"}
               onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Get Started</Text>
@@ -40,29 +39,6 @@ class Main extends Component {
   }
 }
 
-
-const buttonStyles = StyleSheet.create({
-  text: {
-    color: '#007aff',
-    fontFamily: '.HelveticaNeueInterface-MediumP4',
-    fontSize: 17,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  disabledText: {
-    color: '#dcdcdc',
-  },
-  group: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding:10, 
-    height:45, 
-    overflow:'hidden', 
-    borderRadius:4, 
-    backgroundColor: 'white'
-  },
-});
 const styles = StyleSheet.create({
   container: {
     flex: 1,

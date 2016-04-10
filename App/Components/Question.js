@@ -39,9 +39,9 @@ class Question extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{backgroundColor:'#0C94B9', flex: 1}}>
         <Header navigator={this.props.navigator} value={this.props.header} />
-        <View style={styles.container}>
+        <View style={styles.container} >
           <Text>
             {this.props.question}
           </Text>
@@ -55,10 +55,11 @@ class Question extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 11,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+
   }
 });
 

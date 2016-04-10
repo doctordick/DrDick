@@ -40,12 +40,12 @@ class Loading extends Component {
       navigator.replace({
         id: nextRouteId,
       });
-    }, 500);
+    }, 1500);
   }
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#246dd5', alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{flex: 1, backgroundColor: '#0C94B9', alignItems: 'center', justifyContent: 'center'}}>
         <Text style={{color: 'white', fontSize: 32,}}>{this.generateText()}</Text>
       </View>
     );

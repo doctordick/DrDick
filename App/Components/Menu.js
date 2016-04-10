@@ -112,7 +112,7 @@ class Menu extends Component {
 
   renderScene(){
     return (
-      <View>
+      <View style={{backgroundColor:'#0C94B9', flex:1}}>
         <Header navigator={this.props.navigator} value={this.generateText().header} />
         <View style={styles.container}>
           {this.generateText().message}
@@ -125,16 +125,15 @@ class Menu extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 11,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7fdddd',
   },
   menuItem: {
     paddingTop: 20,
     paddingBottom: 20,
     textAlign: 'center',
-    backgroundColor: '#19c1c1',
+    backgroundColor: '#35A5C2',
     margin: 5,
     width: 300,
     color: '#fff',
@@ -142,9 +141,10 @@ const styles = StyleSheet.create({
   },
   text: {
     width: 300,
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'center',
     marginBottom: 15,
+    color: '#fff'
   }
 });
 

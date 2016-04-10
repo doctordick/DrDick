@@ -54,7 +54,7 @@ class Recommendations extends Component {
 
   renderScene(){
     return (
-      <View>
+      <View style={{backgroundColor:'#0C94B9', flex:1}}>
           <Header value="Recommendations" navigator={this.props.navigator}/>
           <View style={styles.container}>
             {this.recGenerator()}     
@@ -66,7 +66,7 @@ class Recommendations extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 11,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',

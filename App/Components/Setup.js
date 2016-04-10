@@ -50,10 +50,10 @@ class Setup extends Component {
 
   renderScene(){
     return (
-      <View>
+      <View style={{backgroundColor:'#0C94B9'}}>
         <Header value="Setup" navigator={this.props.navigator}/>
-        {this.inputGenerator()}
         <View style={styles.container}>
+          {this.inputGenerator()}
           <Text>
             Dr. Dick is HIPAA compliant and secures your data with encryption.
           </Text>
@@ -70,9 +70,9 @@ class Setup extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,

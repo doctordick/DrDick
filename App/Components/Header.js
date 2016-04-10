@@ -35,23 +35,24 @@ class Header extends Component {
 const style = StyleSheet.create({
   container: {
     marginTop: 15,
-    marginBottom: 15,
-    flex: 1,
-    marginLeft: 10,
     flexDirection: 'row',
-    justifyContent: 'center',
-    height: 44,
+    height: 60,
+    borderBottomWidth: 1,
+    borderColor: '#0785ab',
+    flex: 1
   },
   backButton: {
     flex: 1, 
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    marginLeft: 5
   },
   text: {
-    color: '#007aff',
+    color: '#fff',
     fontSize: 48
   },
   title: {
-    fontSize: 24  
+    fontSize: 24,
+    color: '#fff'  
   },
   titleContainer: {
     marginTop: 16,
