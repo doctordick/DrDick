@@ -16,6 +16,7 @@ import Main from "./App/Components/Main"
 import Setup from "./App/Components/Setup"
 import Questionnaire from "./App/Components/Questionnaire"
 import Menu from "./App/Components/Menu"
+import Loading from "./App/Components/Loading"
 import Recommendations from "./App/Components/Recommendations"
 
 class DrDick extends Component {

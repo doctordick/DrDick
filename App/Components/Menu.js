@@ -18,15 +18,22 @@ class Menu extends Component {
     return previousState[previousState.length - 2].id;
   }
 
-  generateMenuItem() {
+  pressHandler(input) {
+ 
+  }
+
+  generateMenuItems() {
     let previousState = this.findPreviousState(),
-        inputs;
+        inputs = [],
+        context = this;
 
     if(previousState === 'Setup') {
       inputs = [{
           label: "Update Info"
       }, {
-          label: "Get Recommendations"
+          label: "Get Recommendations",
+          nextRouteId: 'Loading',
+          title: ''  
       }, {
           label: "Set Reminders"
       }, {
@@ -41,9 +48,16 @@ class Menu extends Component {
           label: "Start Over"
       }]
     }
+
+
     return inputs.map(function(input, index) {
       return (
-        <TouchableHighlight key={index}>
+        <TouchableHighlight 
+          key={index} 
+          onPress= {
+           context.props.nextRoute.bind(context, { id: input.nextRouteId , title:'' }) 
+          }
+        >
           <View>
             <Text >{input.label}</Text>
           </View>
@@ -94,7 +108,7 @@ class Menu extends Component {
       <View style={styles.container}>
         <Header value={this.generateText().header} />
         {this.generateText().message}
-        {this.generateMenuItem()}
+        {this.generateMenuItems()}
       </View>
     );
   }
