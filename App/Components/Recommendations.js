@@ -23,15 +23,15 @@ class Recommendations extends Component {
     const recommendations = [{
         std: 'HIV/STD',
         procedures: ['Blood Test', 'Oral Swab Test', 'Urine Test'],
-        testCenters: '<a>Find a Testing Center</a>'
+        testCenters: 'Find a Testing Center'
       }, {
         std: 'Gonorrhea',
         procedures: ['Urine Test','Nucleic acid amplification tests', 'Gonorrhea culture'],
-        testCenters: '<a>Find a Testing Center</a>'
+        testCenters: 'Find a Testing Center'
       }, {
         std: 'Hepatitis B',
         procedures: ['Blood Test'],
-        testCenters: '<a>Find a Testing Center</a>'
+        testCenters: 'Find a Testing Center'
       }];
     return recommendations.map(function(rec, index) {
       return <Card
@@ -56,11 +56,7 @@ class Recommendations extends Component {
     return (
       <View style={styles.container}>
       <Header value="Recommendations" navigator={this.props.navigator}/>
-        {this.recGenerator()}
-        <Text>
-          Dr. Dick is HIPAA compliant and secures your data with encryption.
-        </Text>
-      
+        {this.recGenerator()}     
       </View>
     );
   }
