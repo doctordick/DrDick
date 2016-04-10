@@ -58,9 +58,11 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 50,
-    fontSize: 23
+    color: '#777777',
+    marginBottom: 30,
+    marginLeft: 10, 
+    marginRight: 10,
+    fontSize: 18
   },
   button: {
     paddingTop: 20,
