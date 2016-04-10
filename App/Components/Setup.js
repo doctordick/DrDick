@@ -60,9 +60,11 @@ class Setup extends Component {
           <Text style={styles.infoText}>
             Dr. Dick is HIPAA compliant and secures your data with encryption.
           </Text>
+        </View>
+        <View style={styles.nextButton}>
           <Next nextRoute={this.props.nextRoute} 
-                nextRouteInfo={{id: 'Menu', title: 'New Session'}}
-                navigator={this.props.navigator}
+              nextRouteInfo={{id: 'Menu', title: 'New Session'}}
+              navigator={this.props.navigator}
           />
         </View>
       </View>
@@ -76,6 +78,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  nextButton: {
+    flex: 2,
+    flexDirection: 'column'
   },
   welcome: {
     fontSize: 20,

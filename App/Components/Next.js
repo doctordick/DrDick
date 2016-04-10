@@ -11,7 +11,7 @@ import React, {
 class Next extends Component {
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
           <TouchableHighlight
             underlayColor={"#0C94B9"}
             onPress={this.props.nextRoute.bind(this, this.props.nextRouteInfo)}>
@@ -32,14 +32,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   button: {
+     borderTopWidth: 2, 
+     borderColor: '#19c3f5',
     marginTop: 30,
     paddingTop: 15,
-    paddingBottom: 15,
+    paddingBottom: 20,
     paddingLeft: 45,
     paddingRight: 45,
     alignItems: 'center',
-    backgroundColor: '#00bbbb',
-    borderRadius: 50,
+    backgroundColor: '#0483ad',
   },
   buttonText: {
     color: '#fff',

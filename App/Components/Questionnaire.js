@@ -30,7 +30,7 @@ const questionCollection = [{
         "Last time topping?",
         "Last time giving a blow job?",
         "Last time getting a blow job?",
-        "Last time injecting recreational drugs (meth or anything else)?"
+        "Last time injecting recreational drugs?"
     ]
 }]
 

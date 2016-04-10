@@ -64,7 +64,8 @@ class Menu extends Component {
         ); 
       } else {
         return (
-          <TouchableHighlight 
+          <TouchableHighlight
+            underlayColor={"#ffffff"}  
             key={index}
             >
             <View>
