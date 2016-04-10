@@ -5,7 +5,8 @@ import React, {
   Text,
   View,
   TouchableHighlight,
-  Navigator
+  Navigator,
+  Image
 } from 'react-native';
 
 class Main extends Component {
@@ -21,20 +22,24 @@ class Main extends Component {
   renderScene(){
     return (
       <View style={styles.container}>
-            <Text style={styles.title}>
-              Dr. Dick
-            </Text>
-            <Text style={styles.subtitle}>
-              Our Dick Helps Keep Yours Healthy
-            </Text>
-            <TouchableHighlight underlayColor={"#ffffff"}
-              onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>Get Started</Text>
-              </View>
-            </TouchableHighlight>
-
+        <Image
+          style={styles.icon}
+          source={require('../Images/stetoscope-banana.png')}
+        />
+        <Text style={styles.title}>
+          Dr. Dick
+        </Text>
+        <Text style={styles.subtitle}>
+          Our Dick Helps Keep Yours Healthy
+        </Text>
+        <TouchableHighlight underlayColor={"#ffffff"}
+          onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Get Started</Text>
           </View>
+        </TouchableHighlight>
+
+      </View>
         );
   }
 }
@@ -70,6 +75,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25
   },
+  icon: {
+    height: 150,
+    width: 150,
+    overflow: 'visible'
+  }
 });
 
 export default Main
