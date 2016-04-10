@@ -37,6 +37,7 @@ class Setup extends Component {
             placeholder={input.label}
             placeholderTextColor={"#ffffff"}
             secureTextEntry={input.secure}
+            autocorrect={false}
              />
          </View>
         )
