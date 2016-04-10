@@ -36,8 +36,11 @@ class Main extends Component {
           onPress={this.props.nextRoute.bind(this, { id: 'Setup', title: 'Setup' })}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Get Started</Text>
-          </View>
+          </View>      
         </TouchableHighlight>
+        <Text style={{fontSize: 16, paddingTop: 20, color: '#777'}}>Already have an account?</Text>
+
+        <Text style={{fontSize: 16, paddingTop: 5, color: 'blue'}}>Login</Text>
 
       </View>
         );
