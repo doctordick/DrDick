@@ -10,6 +10,7 @@ import React, {
 } from 'react-native';
 
 import Next from "./Next"
+import Header from "./Header"
 
 class Setup extends Component {
   nextRoute() {
@@ -50,15 +51,16 @@ class Setup extends Component {
     );
   }
 
-  renderScene(route, navigator){
+  renderScene(){
     return (
       <View style={styles.container}>
+        <Header value="Setup" />
         {this.inputGenerator()}
         <Text>
           Dr. Dick is HIPAA compliant and secures your data with encryption.
         </Text>
         <Next nextRoute={this.props.nextRoute} 
-              nextRouteInfo={{id: 'Questionnaire', title: 'Recent HIV & STD Tests'}}
+              nextRouteInfo={{id: 'Menu', title: 'New Session'}}
               navigator={this.props.navigator}
         />
       </View>

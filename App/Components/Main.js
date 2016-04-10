@@ -18,7 +18,7 @@ class Main extends Component {
       );
 
   }
-  renderScene(route, navigator){
+  renderScene(){
     return (
       <View style={styles.container}>
             <Text style={styles.welcome}>

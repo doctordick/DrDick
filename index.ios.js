@@ -15,6 +15,8 @@ import React, {
 import Main from "./App/Components/Main"
 import Setup from "./App/Components/Setup"
 import Questionnaire from "./App/Components/Questionnaire"
+import Menu from "./App/Components/Menu"
+import Recommendations from "./App/Components/Recommendations"
 
 class DrDick extends Component {
   nextRoute(route) {
@@ -41,6 +43,7 @@ class DrDick extends Component {
             nextRoute={this.nextRoute}/>
         )
     }
+
     if(routeId === 'Setup'){
         return(
           <Setup
@@ -49,9 +52,37 @@ class DrDick extends Component {
             nextRoute={this.nextRoute}/>
         )
     }
+
+    if(routeId === 'Menu'){
+        return(
+          <Menu
+            title={route.title}
+            navigator={navigator}
+            nextRoute={this.nextRoute}/>
+        )
+    }
+
     if(routeId === 'Questionnaire'){
         return(
           <Questionnaire
+            title={route.title}
+            navigator={navigator}
+            nextRoute={this.nextRoute}/>
+        )
+    }
+
+    if(routeId === 'Loading'){
+        return(
+          <Loading
+            title={route.title}
+            navigator={navigator}
+            nextRoute={this.nextRoute}/>
+        )
+    }
+
+    if(routeId === 'Recommendations'){
+        return(
+          <Recommendations
             title={route.title}
             navigator={navigator}
             nextRoute={this.nextRoute}/>
