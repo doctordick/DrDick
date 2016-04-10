@@ -58,15 +58,17 @@ class Menu extends Component {
             }
           >
             <View>
-              <Text >{input.label}</Text>
+              <Text style={styles.menuItem}>{input.label}</Text>
             </View>
           </TouchableHighlight>
         ); 
       } else {
         return (
-          <TouchableHighlight key={index} >
+          <TouchableHighlight 
+            key={index}
+            >
             <View>
-              <Text >{input.label}</Text>
+              <Text style={styles.menuItem}>{input.label}</Text>
             </View>
           </TouchableHighlight>
         );
@@ -82,11 +84,8 @@ class Menu extends Component {
       text.header = 'New Session';
       text.message = (
         <View>
-          <Text>
-            Welcome Henry, Dr. Dick is happy to see you!
-          </Text>
-          <Text>
-            What would you like to do?
+          <Text style={styles.text}>
+            Welcome Henry, Dr. Dick is happy to see you! What would you like to do?
           </Text>
         </View>
       )  
@@ -94,7 +93,7 @@ class Menu extends Component {
       text.header = 'Recommendations';
       text.message = (
         <View>
-          <Text>
+          <Text style={styles.text}>
             Here are Dr. Dick's recommendations:
           </Text>
         </View>
@@ -129,7 +128,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#7fdddd',
+  },
+  menuItem: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    textAlign: 'center',
+    backgroundColor: '#19c1c1',
+    margin: 5,
+    width: 300,
+    color: '#fff',
+    fontSize: 16
+  },
+  text: {
+    width: 300,
+    fontSize: 20,
+    textAlign: 'center',
+    marginBottom: 15,
   }
 });
 

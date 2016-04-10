@@ -22,7 +22,7 @@ class Main extends Component {
     return (
       <View style={styles.container}>
             <Text style={styles.title}>
-              Doctor Dick
+              Dr. Dick
             </Text>
             <Text style={styles.subtitle}>
               Our Dick Helps Keep Yours Healthy
