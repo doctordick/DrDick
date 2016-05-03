@@ -1,12 +1,15 @@
 import React, {
   Component,
   Text,
-  View
-} from 'react-native';
+  View,
+  StyleSheet
+} from 'react-native'
+
+import appColors from './_appColors'
 
 class Loading extends Component {
 
-  findPreviousState() { 
+  findPreviousState() {
     let previousState = this.props.navigator.state.routeStack;
     return previousState[previousState.length - 2].id;
   }
@@ -22,11 +25,10 @@ class Loading extends Component {
 
     return text;
   }
-  
+
   componentWillMount() {
     let previousState = this.findPreviousState(),
         nextRouteId;
-    console.log('previousState', previousState);
 
     if(previousState === 'Menu'){
       nextRouteId = 'Questionnaire';
@@ -45,10 +47,30 @@ class Loading extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#0C94B9', alignItems: 'center', justifyContent: 'center'}}>
-        <Text style={{color: 'white', fontSize: 32,}}>{this.generateText()}</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          { this.generateText() }
+        </Text>
       </View>
     );
   }
+
 }
+
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: appColors.backgroundColorPrimary,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  text: {
+    color: appColors.defaultTextColor,
+    fontSize: 32,
+  },
+
+});
+
 export default Loading

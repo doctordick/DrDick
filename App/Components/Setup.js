@@ -1,41 +1,45 @@
 import React, {
-  AppRegistry,
   Component,
   StyleSheet,
   Text,
   TextInput,
   View,
-  ScrollView,
-  TouchableHighlight,
   Navigator
-} from 'react-native';
+} from 'react-native'
 
-import Next from "./Next"
-import Header from "./Header"
+import Next from './Next'
+import Header from './Header'
+import appColors from './_appColors'
 
 class Setup extends Component {
+
   inputGenerator() {
-    let inputs = [{
+    let inputs = [
+      {
         label: "First Name",
         value: ""
-    }, {
+      },
+      {
         label: "Last Name",
         value: ""
-    }, {
+      },
+      {
         label: "Email",
         value: ""
-    }, {
+      },
+      {
         label: "Password",
         value: "",
         secure: true
-    }];
+      }
+    ];
 
     return inputs.map(function(input) {
       return (
         <View key={input.label} style={styles.input}>
           <TextInput style={styles.textInput}
             placeholder={input.label}
-            placeholderTextColor={"#ffffff"}
+            placeholderTextColor={appColors.defaultTextColor}
             secureTextEntry={input.secure}
             autocorrect={false}
              />
@@ -46,24 +50,23 @@ class Setup extends Component {
 
   render() {
     return (
-      <Navigator
-        renderScene={this.renderScene.bind(this)}
-      />
+      <Navigator renderScene={this.renderScene.bind(this)} />
     );
   }
 
   renderScene(){
     return (
-      <View style={{backgroundColor:'#0C94B9', flex: 1}}>
+      <View style={styles.mainContainer}>
         <Header value="Setup" navigator={this.props.navigator}/>
         <View style={styles.container}>
           {this.inputGenerator()}
           <Text style={styles.infoText}>
-            Dr. Dick is HIPAA compliant and secures your data with encryption.
+            &nbsp; Dr. Dick is HIPAA compliant and secures your &nbsp; &nbsp;
+            data with encryption.
           </Text>
         </View>
         <View style={styles.nextButton}>
-          <Next nextRoute={this.props.nextRoute} 
+          <Next nextRoute={this.props.nextRoute}
               nextRouteInfo={{id: 'Menu', title: 'New Session'}}
               navigator={this.props.navigator}
           />
@@ -74,42 +77,42 @@ class Setup extends Component {
 }
 
 const styles = StyleSheet.create({
+
+  mainContainer: {
+    backgroundColor: appColors.backgroundColorPrimary,
+    flex: 2
+  },
+
   container: {
-    flex: 12,
-    flexDirection: 'column',
+    flex: 11,
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   nextButton: {
     flex: 2,
     flexDirection: 'column'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  input: { 
-    borderColor: '#19c3f5', 
-    borderBottomWidth: 2, 
+
+  input: {
+    borderColor: appColors.borderColorSetup,
+    borderBottomWidth: 2,
     marginBottom: 20
   },
+
   infoText: {
-    marginLeft: 20, 
+    marginLeft: 20,
     marginRight: 20,
     textAlign: 'center',
-    color: '#ffffff'
+    color: appColors.defaultTextColor
   },
+
   textInput:{
-    height: 35, 
-    color: 'white',
+    height: 35,
+    color: appColors.defaultTextColor,
     width: 300
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });
 
 export default Setup
