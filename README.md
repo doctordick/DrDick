@@ -19,8 +19,10 @@ Dr.Dick is built using the following technologies:
 * Redux
 
 # Development
+Before beginning development work, you must first install React Native and other dependencies on your local machine. For installation instructions, please refer to the React Native [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html) page.
+
 ## Setup Instructions for iOS app
-To get up and running on your local development machine:
+To get Dr. Dick up and running on your local development machine:
 
 1. Install the React Native command line tools:
 	```bash

@@ -43,8 +43,6 @@ At a high level, Dr. Dick developers work off of individual forks of a central r
     $ git commit -m "add new feature"
     ```
 
-    It's **VERY** tempting to use `git commit -A` or `git commit .` to add every file you've been working on at once, but it's often best to add files manually - you'll get a much better feel for figuring out *exactly* what git is doing when, and this can be invaluable when things get hairy.
-
 1. Push your work to your origin repo (the fork). 
 
     ```
@@ -93,6 +91,7 @@ Now's the time to add your contributions to the team's central repository throug
     ```bash
     $ git add myNewClass.js
     ```
+NOTE: The Dr. Dick development team will review all merge conflict resolution and reserve the right to reject any merge conflict resolution that is deemed unsatisfactory.
 
 1. After fixing conflicts, use `git add FILENAME` to update the index with the resolved files. When all conflicts are resolved, continue the rebase
 
@@ -152,17 +151,18 @@ Now's the time to add your contributions to the team's central repository throug
     ```
 
 1. Once the condensed feature branch is pushed to your origin, you can [submit a pull request](https://help.github.com/articles/using-pull-requests/)! At minimum, the PR should contain:
-    * A link to the MeisterTask story
+    * A link to the MeisterTask story (only applies to internal dev team)
+    * A description of what the branch does
     * Steps to reproduce and test, including URLs to hit, all use cases, and screenshots (optional)
 
 
 ### Step 4: Merging Pull Requests
 
-1. Assign your PR to someone for review through either tagging others in the PR or commenting with `@<github username>`. 
+1. You should assign your PR to a member of the internal dev team for code review, through either tagging others in the PR or commenting with `@<github username>`. 
 
-1. The reviewer will test and provide feedback on the PR, usually within 24-48 hours. The reviewer should pull down the PR and make sure it works locally. **PLEASE** check the history to ensure that the rebase process went smoothly and merging the pull request will maintain a clear and concise commit history on the master repo. As needed, the reviewer will re-assign the PR back to the author for further development. The author re-assigns the PR back to the reviewer after addressing the reviewer’s feedback.
+1. The reviewer will test and provide feedback on the PR, usually within 24-48 hours. The reviewer should pull down the PR and make sure it works locally. **PLEASE** check the history to ensure that the rebase process went smoothly and merging the pull request will maintain a clear and concise commit history on the master repo. As needed, the reviewer will re-assign the PR back to the author for further development. The author re-assigns the PR back to the reviewer after addressing the reviewer’s feedback for any final feedback.
 
-1. After all PR feedback has been addressed, the reviewer should add `Approved` as a comment. The author will once again squash all commits (see Flattening Your Commits).
+1. After all PR feedback has been satisfactorily addressed, the reviewer should add `Approved` as a comment to the github PR conversation form and tag a member of the internal dev team. The author should once again squash all commits (see Flattening Your Commits).
 
-1. The author can now merge the PR. To merge a PR, follow the steps outlined next to the "Merge Pull Request" button. For more information, please read [how to check out pull requests locally](https://help.github.com/articles/checking-out-pull-requests-locally/)
+1. The internal dev team can now merge the PR. To merge a PR, follow the steps outlined next to the "Merge Pull Request" button. For more information, please read [how to check out pull requests locally](https://help.github.com/articles/checking-out-pull-requests-locally/)
 
