@@ -1,17 +1,14 @@
 import React, {
-  AppRegistry,
   Component,
   StyleSheet,
-  Text,
   View,
   TouchableHighlight,
-  Navigator, 
+  Navigator,
   MapView
-  
-} from 'react-native';
+} from 'react-native'
 
-import Header from "./Header"
-
+import Header from './Header'
+import appColors from './_appColors'
 
 var markers = [
   {
@@ -19,7 +16,7 @@ var markers = [
     longitude: -122.3973877,
     title: 'HIV & STD testing center',
     subtitle: '1234 Jameston Drive'
-  }, 
+  },
   {
     latitude: 37.782701,
     longitude: -122.3955693,
@@ -41,53 +38,45 @@ var markers = [
 ];
 
 class Map extends Component {
+
   render() {
     return (
-        <Navigator
-          renderScene={this.renderScene.bind(this)}
-          />
+        <Navigator renderScene={this.renderScene.bind(this)} />
       );
-
   }
+
   renderScene(route, navigator){
     return (
-      <View style={{backgroundColor:'#0C94B9', flex: 1}}>
+      <View style={styles.container}>
         <Header value="Map" navigator={this.props.navigator}/>
-        <MapView 
+        <MapView
           showsUserLocation={true}
           showsPointsOfInterest={false}
-          annotations={markers} 
-          style={{flex: 11, flexDirection: 'row'}} 
+          annotations={markers}
+          style={styles.mapContainer}
           region={{
             latitude: 37.782286,
-            longitude: -122.3973877, 
+            longitude: -122.3973877,
             latitudeDelta: .01,
             longitudeDelta: .01 }}/>
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: appColors.backgroundColorPrimary,
+    flex: 1
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+
+  mapContainer: {
+    flex: 11,
+    flexDirection: 'row'
   }
-  
+
 });
-
-
 
 export default Map
