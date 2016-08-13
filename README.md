@@ -50,6 +50,6 @@ To get Dr. Dick up and running on your local development machine:
 
 
 ## Contribution Guidelines
-Documentation on how to contribute to Dr. Dick is available at: https://github.com/kchia/DrDick/blob/basic-documentation/CONTRIBUTING.md
+Documentation on how to contribute to Dr. Dick is available at: https://github.com/doctordick/DrDick/blob/master/CONTRIBUTING.md
 
 For any bugs or issues, please create new issues at: https://github.com/doctordick/DrDick/issues 
